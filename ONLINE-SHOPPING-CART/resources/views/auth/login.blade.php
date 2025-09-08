@@ -1,10 +1,9 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
-
-        <x-validation-errors class="mb-4" />
+@extends('layout')
+@section('content')
+ <div class="container">
+    <div class="w-50">
+        <h3>Login Now</h3>
+         <x-validation-errors class="mb-4" />
 
         @session('status')
             <div class="mb-4 font-medium text-sm text-green-600">
@@ -17,12 +16,12 @@
 
             <div>
                 <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                <x-input id="email" class="form-control block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             </div>
 
             <div class="mt-4">
                 <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                <x-input id="password" class="form-control block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
             </div>
 
             <div class="block mt-4">
@@ -39,10 +38,11 @@
                     </a>
                 @endif
 
-                <x-button class="ms-4">
+                <x-button class="ms-4 btn bg-success">
                     {{ __('Log in') }}
                 </x-button>
             </div>
         </form>
-    </x-authentication-card>
-</x-guest-layout>
+    </div>
+ </div>
+@endsection

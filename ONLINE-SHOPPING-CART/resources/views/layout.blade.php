@@ -318,15 +318,29 @@
           </div>
           <div class="col">
             <ul class="d-flex justify-content-end gap-3 list-unstyled m-0">
-              <li>
-                <a href="#">Contact</a>
+              @if(Auth::User())
+              
+                <li>
+                <p class="p-2">{{Auth::User()->name}}</p>
               </li>
               <li>
-                <a href="#">Cart</a>
+                <form action="/logout" method="post">
+                  @csrf
+                  <button type="submit" class="btn btn-danger">Logout</button>
+                </form>
+              </li>
+               
+              
+              @else
+                 <li>
+                <a href="/login">Login</a>
               </li>
               <li>
-                <a href="#">Login</a>
+               <a href="/register">Register</a>
               </li>
+            
+              @endif
+              
             </ul>
           </div>
         </div>
@@ -386,7 +400,7 @@
                 <a class="nav-link me-5" href="index.html">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link me-5" href="#">Contact Us</a>
+                <a class="nav-link me-5" href="/contact">Contact Us</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link me-5" href="#">Cart</a>
@@ -447,7 +461,7 @@
                 <a href="#">Shipping</a>
               </li>
               <li class="pb-2">
-                <a href="#">Contact Us</a>
+                <a href="/contact">Contact Us</a>
               </li>
               <li class="pb-2">
                 <a href="#">Help</a>
