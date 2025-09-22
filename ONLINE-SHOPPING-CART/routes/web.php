@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Middleware\Admin;
+use App\Http\Controllers\Admin;
+use App\Http\Controllers\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,27 @@ Route::middleware([
 Route::middleware([Admin::class])->group(function(){
 Route::get('/adminpanel', function () {
     return view('admin');
+    
 });
+
 }); 
+Route::post('/delete/{id}',[Admin::class,('delete')]);
+
+
+
+
+Route::post('/uploadproduct',[Admin::class,('uploadproduct')]);
+Route::post('/contact',[User::class,('contact')]);
+Route::get('/adminpanel',[User::class,('fetch')]);
+Route::post('/delete/{userid}',[User::class,('deleterecord')]);
+
+Route::get('/addtocart/{id}',[User::class,('addtocart')]);
+Route::get('/mylist',[User::class,('getitems')]);
+
+Route::get('/upload_product', function () {
+    return view('admin.upload_product');
+});
+Route::get('/viewproduct', [Admin::class,('getproducts')]);
+Route::get('/contactqueries',[User::class,('fetch')]);
+Route::get('/allproducts',[User::class,('getproducts')]);
 

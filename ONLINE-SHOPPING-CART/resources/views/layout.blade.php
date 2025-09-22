@@ -367,10 +367,11 @@
           </div>
           <div class="offcanvas-body">
             <ul id="navbar" class="navbar-nav fw-bold justify-content-end align-items-center flex-grow-1">
-              <li class="nav-item dropdown">
-                <a class="nav-link me-5 active border-0" href="#" data-bs-toggle="dropdown"
-                  aria-expanded="false">Home</a>
-                
+              <li class="nav-item">
+                <a class="nav-link me-5" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-5" href="allproducts">All Products</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link me-5 active dropdown-toggle border-0" href="#" data-bs-toggle="dropdown"
@@ -403,8 +404,9 @@
                 <a class="nav-link me-5" href="/contact">Contact Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link me-5" href="#">Cart</a>
+                <a class="nav-link me-5" href="/mylist">Cart</a>
               </li>
+              
             </ul>
           </div>
         </div>
